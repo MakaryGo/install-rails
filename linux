@@ -58,12 +58,11 @@ log_info "Installing rbenv and ruby-build ..."
 # fi
 
 # Install rbenv and ruby-build from repository
-  sudo apt-get -y install ruby-build
-
-# if [[ ! -d "$HOME/.rbenv/plugins/ruby-build" ]]; then
-#   log_info "Installing ruby-build, to install Rubies ..."
-#     git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-# fi
+  sudo apt-get -y install rbenv
+if [[ ! -d "$HOME/.rbenv/plugins/ruby-build" ]]; then
+  log_info "Installing ruby-build, to install Rubies ..."
+    git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+fi
 
 ruby_version="2.5.1"
 
