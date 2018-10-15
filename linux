@@ -62,10 +62,14 @@ log_info "Installing image utilities ..."
 # fi
 
 ruby_version="2.5.1"
+# Trying to use Ruby from repo
 ruby_short="2.5"
 
 log_info "Installing Ruby $ruby_version ..."
   sudo apt-get -y install ruby"$ruby_short"
+  echo 'export GEM_HOME=~/.ruby' >> ~/.bashrc
+  echo 'export PATH="$PATH:~/.ruby/bin"' >> ~/.bashrc
+  source ~/.bashrc
 #   rbenv install "$ruby_version"
 
 # log_info "Setting $ruby_version as global default Ruby ..."
@@ -73,9 +77,6 @@ log_info "Installing Ruby $ruby_version ..."
 #   rbenv rehash
 #
 #
-# Trying to use Ruby from repo
-
-
 
 log_info "Updating to latest Rubygems version ..."
   gem update --system
