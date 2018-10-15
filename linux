@@ -67,6 +67,7 @@ ruby_short="2.5"
 
 log_info "Installing Ruby $ruby_version ..."
   sudo apt-get -y install ruby"$ruby_short"
+# Create gems directory for current user
   echo 'export GEM_HOME=~/.ruby' >> ~/.bashrc
   echo 'export PATH="$PATH:~/.ruby/bin"' >> ~/.bashrc
   source ~/.bashrc
